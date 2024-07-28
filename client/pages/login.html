@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,400;1,300&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/registerStyle.css" rel="stylesheet">
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Inline CSS for card styles -->
+    <style>
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .card h3 {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            border-radius: 15px;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="../assets/img/logo.png" alt="logo">
+            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#main">الرئيسية</a></li>
+                    <li><a class="nav-link scrollto" href="./index.html">خدماتنا</a></li>
+                    <li><a class="nav-link scrollto" href="./index.html">طريقة الاستخدام</a></li>
+                    <li><a class="nav-link scrollto" href="index.html">الأسعار</a></li>
+                    <li><a class="nav-link scrollto" href="./index.html">الأسئلة الشائعة</a></li>
+                    <li><a class="nav-link scrollto" href="./index.html">من نحن</a></li>
+                    <li><a class="nav-link scrollto" href="./index.html">تواصل معنا</a></li>
+                    <li><a class="getstarted scrollto" href="./register.html?userId=${id}">جرب الآن</a></li>
+                    <li><a class="nav-link scrollto" href="./login.html">تسجيل الدخول</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <!-- Login section -->
+    <section>
+        <div class="wrapper">
+            <div class="container main">
+                <!-- <div class="row"> -->
+                    <div class="card">
+                        <div class="input-box">
+                            <h3> مرحبا بعودتك سجل الآن و استمتع بالتجربة</h3>
+                            <form id="loginForm" action="/login" method="POST">
+                                <div class="input-field mb-3">
+                                    <label for="email" class="form-label">ايميل</label>
+                                    <input type="email" id="email" class="form-control">
+                                </div>
+                                <div class="input-field mb-3">
+                                    <label for="password" class="form-label">كلمة السر</label>
+                                    <input type="password" id="password" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div>
+                                <div class="d-grid">
+                                    <input class="btn" type="submit" value="تسجيل الدخول"
+                                        style="background-color: #219653;color: white;" id="liveToastBtn">
+                                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                        <div id="liveToast" class="toast" role="alert" aria-live="assertive"
+                                            aria-atomic="true">
+                                            <div class="toast-body text-success">
+                                                تم التسجيل بنجاح
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="signin text-center mt-3">
+                                <span>لا تملك حساب؟ <a href="./register.html">انشاء حساب</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-sm-12 image-side d-none d-md-block">
+                        <img src="../assets/img/register/register.png" class="img-fluid" alt="register image">
+                    </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- End Login section -->
+
+    <!-- Template Main JS File -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get input field values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Construct data object
+            const data = {
+                email: email,
+                password: password
+            };
+
+            // Get toast elements
+            const toastLiveExample = document.getElementById('liveToast');
+            const toastBody = document.querySelector('#liveToast .toast-body');
+            const toast = new bootstrap.Toast(toastLiveExample);
+
+            try {
+                // Make POST request to API endpoint
+                const response = await fetch('http://localhost:3000/api/users/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data),
+                    credentials: 'include'
+                });
+
+                const responseData = await response.json();
+
+                // Check response status
+                if (response.ok) {
+                    // Login successful, handle accordingly
+                    console.log('Login successful:', responseData);
+                    const { token, id } = responseData.data;
+                    console.log('token => ', token);
+                    console.log('id => ', id);
+                    localStorage.setItem('authToken', token);
+                    localStorage.setItem('userId', id);
+
+                    // Update toast message
+                    toastBody.textContent = 'تم التسجيل بنجاح';
+                    toastBody.classList.add('text-success');
+                    toastBody.classList.remove('text-danger');
+
+                    // Show toast notification
+                    toast.show();
+
+                    // Delay redirect to profile page to allow time for toast to be seen
+                    setTimeout(() => {
+                        window.location.href = `http://127.0.0.1:5501/client/pages/profile.html?userId=${id}`;
+                    }, 1000); // Adjust the delay time as needed
+                } else {
+                    // Login failed, handle error
+                    console.log('Login failed:', responseData);
+
+                    // Update toast message
+                    toastBody.textContent = 'Login failed! ' + responseData['Message'];
+                    toastBody.classList.add('text-danger');
+                    toastBody.classList.remove('text-success');
+
+                    // Show toast notification
+                    toast.show();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+
+                // Update toast message
+                toastBody.textContent = 'An error occurred on server. Please try again later.';
+                toastBody.classList.add('text-danger');
+                toastBody.classList.remove('text-success');
+
+                // Show toast notification
+                toast.show();
+            }
+        });
+    </script>
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

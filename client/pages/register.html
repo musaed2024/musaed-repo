@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مساعد</title>
+
+    <!-- Vendor CSS Files -->
+    <link
+    href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+    href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/registerStyle.css" rel="stylesheet" />
+    <!-- Include toastr CSS -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+    <!-- =======header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+      <a href="index.html" class="logo d-flex align-items-center">
+          <img src="../assets/img/logo.png" alt="logo" />
+          <!-- <span>FlexStart</span> -->
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="#main">الرئيسية</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="./index.html">خدماتنا</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="./index.html"
+                >طريقة الاستخدام</a
+                >
+              </li>
+              <li><a class="nav-link scrollto" href="index.html">الأسعار</a></li>
+            <li>
+              <a class="nav-link scrollto" href="./index.html"
+                >الأسئلة الشائعة</a
+                >
+              </li>
+              <li><a class="nav-link scrollto" href="./index.html">من نحن</a></li>
+              <li>
+                <a class="nav-link scrollto" href="./index.html">تواصل معنا</a>
+              </li>
+            <li><a class="getstarted scrollto" href="#">جرب الآن</a></li>
+            <li><a class="nav-link scrollto" href="login.html">تسجيل الدخول</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Register section -->
+    <section>
+      <br />
+      <div class="wrapper">
+        <div class="container main">
+          <div class="row">
+            <div class="col-md-6 right-side">
+              <div class="input-box">
+                <br /><br />
+                <h3>سجل الآن و استمتع بالتجربة</h3>
+                
+                <form id="signupForm" action="/register" method="POST">
+                  <div class="input-field">
+                    <label for="name" class="form-label">اسم المستخدم</label>
+                    <input type="text" id="name" class="form-control" />
+                  </div>
+                  <div class="input-field">
+                    <label for="email" class="form-label">الايميل</label>
+                    <input type="email" id="email" class="form-control" />
+                  </div>
+                  <div class="input-field">
+                    <label for="password" class="form-label">الباسورد</label>
+                    <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    aria-describedby="passwordHelpBlock"
+                    />
+                  </div>
+                  <h3>معلومات المتجر</h3>
+                  <div class="input-field">
+                    <label for="bussName" class="form-label">اسم المتجر</label>
+                    <input type="text" id="bussName" class="form-control" />
+                  </div>
+                  <div class="input-field">
+                    <label for="bussEmail" class="form-label"
+                    >ايميل المتجر</label
+                    >
+                    <input type="email" id="bussEmail" class="form-control" />
+                  </div>
+                  <div class="input-field">
+                    <label for="bussIndustry" class="form-label"
+                      >نوع المتجر</label
+                      >
+                      <input type="text" id="bussIndustry" class="form-control" />
+                  </div>
+                  <div class="input-field">
+                    <label for="bussPhone" class="form-label">رقم المتجر</label>
+                    <input type="text" id="bussPhone" class="form-control" />
+                  </div>
+                  <div class="input-field">
+                    <label for="bussCountry" class="form-label">الدولة</label>
+                    <input type="text" id="bussCountry" class="form-control" />
+                  </div>
+                  <input
+                  type="submit"
+                    value="انشاء حساب"
+                    class="btn"
+                    style="background-color: #219653; color: white"
+                    id="liveToastBtn"
+                  />
+                  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive"
+                        aria-atomic="true">
+                        <div class="toast-body text-success">
+                            تم التسجيل بنجاح
+                        </div>
+                    </div>
+                </div>
+                </form>
+                <div class="signin text-center">
+                  <span
+                    >هل لديك حساب ؟<a href="./login.html">تسجيل دخول</a></span
+                  >
+                  <br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 image-side">
+              <!-------------      image     ------------->
+
+              <img src="../assets/img/register/register.png" alt="" />
+              <!-- <div class="text">
+                        <p>Join the community of developers <i>- ludiflex</i></p>
+                    </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Register section -->
+
+    <!-- Include toastr JS -->
+    <!-- Template Main JS File -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+
+      document.getElementById('signupForm').addEventListener('submit', async function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Initialize toastr
+      // toastr.options = {
+      //     closeButton: true,
+      //     progressBar: true,
+      //     positionClass: 'toast-top-right',
+      //     timeOut: 3000 // Duration in milliseconds
+      // };
+          // Get input field values
+          const userName = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          const businessName = document.getElementById('bussName').value;
+          const businessEmail = document.getElementById('bussEmail').value;
+          const businessIndustry = document.getElementById('bussIndustry').value;
+          const businessPhone = document.getElementById('bussPhone').value;
+          const businessCountry = document.getElementById('bussCountry').value;
+
+          // Construct data object
+          const data = {
+              userName: userName,
+              email: email,
+              password: password,
+              businessInfo: {
+                  name: businessName,
+                  email: businessEmail,
+                  industry: businessIndustry,
+                  phone: businessPhone,
+                  country: businessCountry
+              }
+          };
+
+          // Get toast elements
+          const toastLiveExample = document.getElementById('liveToast');
+            const toastBody = document.querySelector('#liveToast .toast-body');
+            const toast = new bootstrap.Toast(toastLiveExample);
+        
+
+          try {
+              // Make POST request to API endpoint
+              const response = await fetch('http://localhost:3000/api/users/register', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+              });
+
+              const responseData = await response.json();
+
+              // Check response status
+              if (response.ok) {
+                  // Registration successful, handle accordingly (e.g., show success message, redirect to login page)
+                  console.log('Registration successful:', responseData);
+                  // Update toast message
+                  toastBody.textContent = 'تم انشاء الحساب بنجاح';
+                    toastBody.classList.add('text-success');
+                    toastBody.classList.remove('text-danger');
+        
+                    // Show toast notification
+                    toast.show();
+                    // Delay redirect to profile page to allow time for toast to be seen
+                    setTimeout(() => {
+                        window.location.href = "./login.html";
+                    }, 1000); 
+
+                  
+              } else {
+                  // Registration failed, handle error (e.g., display error message)
+                  console.error('Registration failed:', responseData.Message);
+                  alert(`Registration failed! ${responseData.Message} Please try again.`); // Example: Show alert message
+              }
+          } catch (error) {
+              console.error('Error:', error);
+              // Update toast message
+              toastBody.textContent = 'فشل انشاء الحساب' + responseData['Message'];
+                    toastBody.classList.add('text-danger');
+                    toastBody.classList.remove('text-success');
+        
+                    // Show toast notification
+                    toast.show();
+          }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+    <script src="../assets/js/main.js"></script>
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />/
+  </body>
+</html>

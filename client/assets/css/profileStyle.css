@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,400;1,300&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+
+:root {
+  scroll-behavior: smooth;
+  --main-color: #219653;
+  --light-color: rgba(225, 250, 230, 0.989);
+  --dark-color: #021D0D;
+}
+
+body {
+  font-family: "Tajawal", sans-serif;
+  color: #444444;
+  user-select: none;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Tajawal", sans-serif;
+}
+
+/*--------------------------------------------------------------
+    # Back to top button
+    --------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: var(--main-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.back-to-top i {
+  font-size: 30px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  scale: 0.92;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+    # Disable aos animation delay on mobile devices
+    --------------------------------------------------------------*/
+/* @media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+} */
+
+/*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+/* @media (min-width: 1200px) {
+  .logo {
+    width: 280px;
+  }
+} */
+
+.logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.header {
+  transition: all 0.5s;
+  z-index: 100;
+  height: 60px;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  display: flex;
+  justify-content: space-between;
+  width: 100% !important;
+  position: top;
+  max-width: 100%;
+}
+
+.header .search-bar {
+  min-width: 360px;
+  padding: 0 20px;
+}
+
+/* @media (max-width: 1199px) {
+  .header .search-bar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0px 0px 15px 0px rgba(1, 41, 112, 0.1);
+    background: white;
+    z-index: 9999;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+} */
+
+.header .search-form input {
+  border: 0;
+  font-size: 16px;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  padding: 7px 10px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.header .search-form input:focus,
+.header .search-form input:hover {
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
+  border: 1px solid var(--main-color);
+}
+
+.header .search-form button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.header .search-form button i {
+  margin: 10px;
+
+}
+
+/*--------------------------------------------------------------
+    # Header Nav
+    --------------------------------------------------------------*/
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .nav-icon {
+  font-size: 22px;
+  margin: 15px;
+  position: relative;
+}
+
+.header-nav .nav-profile img {
+  max-height: 40px;
+  margin: 15px;
+}
+
+.header-nav .nav-profile span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-nav .badge-number {
+  position: absolute;
+  inset: -2px -5px auto auto;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 2px 5px;
+  background-color: var(--main-color);
+}
+
+.header-nav .profile {
+  min-width: 100px;
+  top: -8px !important;
+}
+
+.header-nav .profile .dropdown-header h6 {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: 800;
+  color: var(--main-color);
+}
+
+.header-nav .profile .dropdown-item {
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.header-nav .profile .dropdown-item i {
+  margin-left: 10px;
+  font-size: 18px;
+  line-height: 0;
+}
+
+.header-nav .profile .dropdown-item:hover {
+  background-color: var(--light-color);
+}
+
+/* Bordered Tabs */
+.nav-tabs-bordered {
+  border-bottom: 2px solid #ebeef4;
+}
+
+.nav-tabs-bordered .nav-link {
+  margin-bottom: -2px;
+  border: none;
+  color: var(--main-color);
+}
+
+.nav-tabs-bordered .nav-link:hover,
+.nav-tabs-bordered .nav-link:focus {
+  color: var(--main-color);
+}
+
+.nav-tabs-bordered .nav-link.active {
+  background-color: #fff;
+  border-bottom: 2px solid var(--main-color);
+}
+
+
+
+/*--------------------------------------------------------------
+# Profie Page
+--------------------------------------------------------------*/
+#main {
+  /* margin-top: 12px; */
+ 
+  padding: 20px ;
+  transition: all 0.3s;
+  width: 93%;
+  /* margin-right: 100px; */
+  /* position: fixed; */
+}
+
+/* @media (max-width: 1199px) {
+  #main {
+    padding: 20px;
+    max-width: 120px;
+  }
+} */
+
+.profile .profile-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c384e;
+  margin: 10px 0 0 0;
+}
+
+.profile .profile-card h3 {
+  font-size: 18px;
+}
+
+.profile .profile-card .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  color: rgba(1, 41, 112, 0.5);
+  line-height: 0;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.profile .profile-card .social-links a:hover {
+  color: #012970;
+} */
+
+.profile .profile-overview .row {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.nav .nav-item .nav-link {
+  color: var(--main-color);
+}
+
+.profile .profile-overview .label {
+  font-weight: 400;
+}
+
+.profile .nav-item .nav-link {
+  color: black;
+  font-weight: 500;
+}
+
+.profile .nav-item .nav-link .active {
+  color: var(--main-color);
+
+}
+
+.profile .tab-content .card-title {
+  color: var(--main-color);
+  margin: 24px 0px;
+}
+
+.profile .profile-edit label {
+  font-weight: 400;
+  color: black;
+}
+
+.save {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 10px;
+  color: #fff;
+  background: var(--main-color);
+}
+
+.save:hover {
+  color: white;
+  background: var(--main-color);
+  scale: 0.95;
+}
