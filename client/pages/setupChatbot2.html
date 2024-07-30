@@ -15,7 +15,7 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/sidebarStyle.css" rel="stylesheet">
   <link href="../assets/css/profileStyle.css" rel="stylesheet">
-  <!-- bootstrab -->
+  <!-- Bootstrap RTL -->
   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
   <link href="../assets/bootstrap/bootstrap-rtl.min.css" rel="stylesheet" />
   <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -35,63 +35,83 @@
       overflow-y: auto;
       height: calc(100vh - 56px);
     }
+
+    .product-group {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .card {
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
-    <header id="header" class="header fixed-top d-flex align-items-center">
-      <div class="d-flex align-items-center justify-content-between">
-        <a href="../index.html" class="logo d-flex align-items-center">
-          <img src="../assets/img/logo.png">
-        </a>
-      </div>
-      <div class="search-bar">
-      </div>
-      <nav class="header-nav">
-        <ul class="d-flex align-items-center">
-          <li class="nav-item d-block d-lg-none">
-            <a class="nav-link nav-icon search-bar-toggle " href="#">
-              <i class="bi bi-search"></i>
-            </a>
-          </li>
-          <li class="nav-item d-flex">
-            <a class="nav-link nav-icon" href="#">
-              <i class="bi bi-bell"></i>
-              <span class="badge  badge-number">4</span>
-            </a>
-            <a class="nav-link nav-icon" href="#">
-              <i class="bi bi-chat-right-text"></i>
-              <span class="badge badge-number">2</span>
-            </a>
-          </li>
-          <li class="nav-itdropdown pe-3em ">
-            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <span class="d-none d-md-block dropdown-toggle ps-2">اسم المستخدم</span>
-              <img src="../assets/img/register/register.png" alt="Profile" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu  dropdown-menu-arrow profile">
-              <li class="dropdown-header">
-                <h6>اسم الأستخدام</h6>
-              </li>
-              <hr class="dropdown-divider">
-              <li>
-                <a class="dropdown-item d-flex align-items-center" href="profile.html">
-                  <i class="bi bi-person"></i>
-                  <span>البروفايل</span>
-                </a>
-              </li>
-              <hr class="dropdown-divider">
-              <li>
-                  <a id="logoutButton" class="dropdown-item d-flex align-items-center" href="./login.html">
-                      <i class="bi bi-box-arrow-right"></i>
-                      <span>تسجيل خروج</span>
-                  </a>
-                </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="mt-5 pt-3">
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png">
+      </a>
+    </div>
+    <div class="search-bar"></div>
+    <nav class="header-nav">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle" href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+        <li class="nav-item d-flex">
+          <a class="nav-link nav-icon" href="#">
+            <i class="bi bi-bell"></i>
+            <span class="badge badge-number">4</span>
+          </a>
+          <a class="nav-link nav-icon" href="#">
+            <i class="bi bi-chat-right-text"></i>
+            <span class="badge badge-number">2</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span class="d-none d-md-block dropdown-toggle ps-2">اسم المستخدم</span>
+            <img src="../assets/img/register/register.png" alt="Profile" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>اسم الأستخدام</h6>
+            </li>
+            <hr class="dropdown-divider">
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="profile.html">
+                <i class="bi bi-person"></i>
+                <span>البروفايل</span>
+              </a>
+            </li>
+            <hr class="dropdown-divider">
+            <li>
+              <a id="logoutButton" class="dropdown-item d-flex align-items-center" href="./login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>تسجيل خروج</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="mt-5 pt-3">
     <div class="wrapper">
       <aside id="sidebar">
         <div class="d-flex">
@@ -133,149 +153,160 @@
               <span class="p-2">التقارير</span>
             </a>
           </li>
-          
           <a href="./login.html" class="sidebar-link mt-5">
             <i class="lni lni-exit"></i>
             <span>تسجيل الخروج</span>
           </a>
         </ul>
       </aside>
-      <div class="main p-3 ">
-        <div class="card scrollable-section">
+      <div class="main p-3">
+        <div class="card">
           <div class="card-header">
-            <h4 class="card-title text-success p-1">تفعيل رد آلي مدعم بال AI </h4>
+            <h4 class="card-title text-success p-1">تفعيل رد آلي مدعم بال AI</h4>
           </div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <h5 class="card-title text-success">سياسة العمل</h5>
-                <div class="form-group mt-4">
-                  <label for="policy1" class="p-2">سياسة الدفع و الاستلام</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="policy1"
-                  />
-                  <small id="policyHelp1" class="form-text text-muted p-2"
-                    >اكتب سياسة الدفع و آلية الاستلام الخاصة بمتجرك</small>
+            <form id="businessForm">
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 class="card-title text-success">سياسة العمل</h5>
+                  <div class="form-group mt-4">
+                    <label for="policy1" class="p-2">سياسة الدفع و الاستلام</label>
+                    <input type="text" class="form-control" id="policy1" />
+                    <small id="policyHelp1" class="form-text text-muted p-2">اكتب سياسة الدفع و آلية الاستلام الخاصة بمتجرك</small>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="policy2" class="p-2">سياسة الشحن و التوصيل</label>
+                    <input type="text" class="form-control" id="policy2" />
+                    <small id="policyHelp2" class="form-text text-muted p-2">اكتب سياسة الشحن و آلية التوصيل الخاصة بمتجرك</small>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="policy3" class="p-2">سياسة الأستبدال و الأسترجاع</label>
+                    <input type="text" class="form-control" id="policy3" />
+                    <small id="policyHelp3" class="form-text text-muted p-2">اكتب سياسة الأستبدال و الأسترجاع الخاصة بمتجرك</small>
+                  </div>
                 </div>
-                <div class="form-group mt-4">
-                  <label for="policy2" class="p-2">سياسة الشحن و التوصيل</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="policy2"
-                  />
-                  <small id="policyHelp2" class="form-text text-muted p-2"
-                    >اكتب سياسة الشحن و آلية التوصيل الخاصة بمتجرك</small>
+                <div class="col-md-12 mt-4">
+                  <h5 class="card-title text-success">تفاصيل العمل</h5>
+                  <div class="form-group mt-4">
+                    <label for="storeDescription" class="p-2">وصف المتجر</label>
+                    <textarea class="form-control" id="storeDescription" rows="3"></textarea>
+                    <small id="descriptionHelp" class="form-text text-muted p-2">قدم وصفاً موجزاً لمتجرك</small>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="targetAudience" class="p-2">الفئة المستهدفة</label>
+                    <input type="text" class="form-control" id="targetAudience" />
+                    <small id="audienceHelp" class="form-text text-muted p-2">حدد الفئة التي تستهدفها منتجاتك</small>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="customerQueries" class="p-2">الاستفسارات الشائعة</label>
+                    <textarea class="form-control" id="customerQueries" rows="3"></textarea>
+                    <small id="queriesHelp" class="form-text text-muted p-2">اكتب الاستفسارات الشائعة التي قد يطرحها العملاء</small>
+                  </div>
                 </div>
-                <div class="form-group mt-4">
-                  <label for="policy3" class="p-2">سياسة الأستبدال و الأسترجاع</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="policy3"
-                  />
-                  <small id="policyHelp3" class="form-text text-muted p-2"
-                    >اكتب سياسة الأستبدال و آلية الاسترجاع الخاصة بمتجرك</small>
+                <div class="col-md-12 mt-4">
+                  <h5 class="card-title text-success">المنتجات</h5>
+                  <div id="productContainer">
+                    <div class="product-group">
+                      <div class="form-group mt-4">
+                        <label for="productName1" class="p-2">اسم المنتج</label>
+                        <input type="text" class="form-control" id="productName1" name="productName" />
+                      </div>
+                      <div class="form-group mt-4">
+                        <label for="productPrice1" class="p-2">السعر</label>
+                        <input type="number" class="form-control" id="productPrice1" name="productPrice" />
+                      </div>
+                      <div class="form-group mt-4">
+                        <label for="productDescription1" class="p-2">الوصف</label>
+                        <textarea class="form-control" id="productDescription1" name="productDescription" rows="2"></textarea>
+                      </div>
+                      <div class="form-group mt-4">
+                        <label for="productDiscount1" class="p-2">الخصم</label>
+                        <input type="number" class="form-control" id="productDiscount1" name="productDiscount" />
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-success mt-3" id="addProductButton">إضافة منتج آخر</button>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="form-group">
-                  <label for="storeDescription" class="p-2">وصف عام عن المتجر</label>
-                  <textarea class="form-control shadow-sm" id="storeDescription" rows="3">
-                  </textarea>
-                </div>
-                <div class="form-group  mt-4">
-                  <label for="targetAudience" class="p-2">الفئه المستهدفة من العملاء</label>
-                  <textarea class="form-control shadow-sm" id="targetAudience" rows="3">
-                  </textarea>
-                </div>
-                <div class="form-group mt-4">
-                  <label for="customerQueries" class="p-2">استفسارات العملاء</label>
-                  <textarea class="form-control shadow-sm" id="customerQueries" rows="3">
-                  </textarea>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-               <div class="card shadow p-3">
-                <h4 class="card-title text-success p-2" >المنتجات</h4>
-                <div class="form-group">
-                  <label for="productName" class="p-2">اسم المنتج</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productName"/>
-                </div>
-                <div class="form-group mt-3">
-                  <label for="productPrice"class="p-2">سعر المنتج</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productPrice"/>
-                </div>
-                <div class="form-group mt-3">
-                  <label for="productDescription"class="p-2">وصف المنتج</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productDescription"/>
-                </div>
-                <div class="form-group mt-3">
-                  <label for="productDiscount"class="p-2">الخصم</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="productDiscount"/>
-                </div>
-               </div>
-              </div>
-            </div>
+              <button type="submit" class="btn btn-primary mt-4">حفظ</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    <script>
-      const hamBurger = document.querySelector(".toggle-btn");
-      hamBurger.addEventListener("click", function () {
-        document.querySelector("#sidebar").classList.toggle("expand");
+  </div>
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      let productCount = 1;
+      
+      $('#addProductButton').click(function() {
+        productCount++;
+        const productGroup = `
+          <div class="product-group mt-4">
+            <hr>
+            <div class="form-group mt-4">
+              <label for="productName${productCount}" class="p-2">اسم المنتج</label>
+              <input type="text" class="form-control" id="productName${productCount}" name="productName" />
+            </div>
+            <div class="form-group mt-4">
+              <label for="productPrice${productCount}" class="p-2">السعر</label>
+              <input type="number" class="form-control" id="productPrice${productCount}" name="productPrice" />
+            </div>
+            <div class="form-group mt-4">
+              <label for="productDescription${productCount}" class="p-2">الوصف</label>
+              <textarea class="form-control" id="productDescription${productCount}" name="productDescription" rows="2"></textarea>
+            </div>
+            <div class="form-group mt-4">
+              <label for="productDiscount${productCount}" class="p-2">الخصم</label>
+              <input type="number" class="form-control" id="productDiscount${productCount}" name="productDiscount" />
+            </div>
+          </div>
+        `;
+        $('#productContainer').append(productGroup);
       });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const formElements = {
-          policy1: document.getElementById('policy1'),
-          policy2: document.getElementById('policy2'),
-          policy3: document.getElementById('policy3'),
-          storeDescription: document.getElementById('storeDescription'),
-          targetAudience: document.getElementById('targetAudience'),
-          customerQueries: document.getElementById('customerQueries'),
-          productName: document.getElementById('productName'),
-          productPrice: document.getElementById('productPrice'),
-          productDescription: document.getElementById('productDescription'),
-          productDiscount: document.getElementById('productDiscount')
+
+      $('#businessForm').submit(function(event) {
+        event.preventDefault();
+        const formData = {
+          paymentPolicy: $('#policy1').val(),
+          shippingPolicy: $('#policy2').val(),
+          returnPolicy: $('#policy3').val(),
+          storeDescription: $('#storeDescription').val(),
+          targetAudience: $('#targetAudience').val(),
+          customerQueries: $('#customerQueries').val(),
+          products: []
         };
 
-        document.querySelector('form').addEventListener('submit', function(event) {
-          event.preventDefault();
-
-          const formValues = {
-            policy1: formElements.policy1.value,
-            policy2: formElements.policy2.value,
-            policy3: formElements.policy3.value,
-            storeDescription: formElements.storeDescription.value.trim(),
-            targetAudience: formElements.targetAudience.value.trim(),
-            customerQueries: formElements.customerQueries.value.trim(),
-            productName: formElements.productName.value,
-            productPrice: formElements.productPrice.value,
-            productDescription: formElements.productDescription.value,
-            productDiscount: formElements.productDiscount.value
+        $('.product-group').each(function() {
+          const product = {
+            name: $(this).find('input[name="productName"]').val(),
+            price: $(this).find('input[name="productPrice"]').val(),
+            description: $(this).find('textarea[name="productDescription"]').val(),
+            discount: $(this).find('input[name="productDiscount"]').val()
           };
+          formData.products.push(product);
+        });
 
-          console.log(formValues);
+        $.ajax({
+          type: 'POST',
+          url: '/api/business-information',
+          data: JSON.stringify(formData),
+          contentType: 'application/json',
+          success: function(response) {
+            alert('تم حفظ البيانات بنجاح!');
+            // Reset the form or redirect as needed
+          },
+          error: function(error) {
+            alert('حدث خطأ أثناء حفظ البيانات. حاول مرة أخرى.');
+          }
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
