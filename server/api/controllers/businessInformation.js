@@ -1,3 +1,4 @@
+const BusinessInformation = require('../modules/businessInformation');
 const Product = require('../modules/businessInformation');
 const httpStatusText = require('../utils/httpStatusText')
 // const { use } = require('../routers/products.routers');
@@ -61,7 +62,7 @@ const addBusinessInformation = async (req,res) =>{
         await businessInformation.save();
         res.status(201).json({ message: 'Business information saved successfully!', data: businessInfo });
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).json({ status: 'ERROR', message: error.message });
       }
 }
 module.exports = {

@@ -7,19 +7,18 @@ const cookieParser = require('cookie-parser');
 const dbConnection = require('./configDB/dbConnection');
 const usersRouter = require('./api/routers/users.routers');
 const businessInformationRouter = require('./api/routers/businessInformation');
-const httpStatusText = require('./api/utils/httpStatusText');
+// const httpStatusText = require('./api/utils/httpStatusText');
 
 const app = express()
 
 //config the cors
  // to solve cors policy 'Cross Origin Resourse Sharing'
 app.use(cors({
-    origin:'http://127.0.0.1:5501', // Replace with your front-end origin
+    origin:'http://127.0.0.1:5501',
     credentials: true
   }));
 //config the body-parser
 app.use(express.json());
-app.use(cookieParser());
 
 //config the routes
 app.use('/api/users',usersRouter);

@@ -17,8 +17,6 @@ router
   .get(businessInformationControllers.getOnlyProduct)
   .patch(businessInformationControllers.updateProduct);
 
-router
-  .route("/business-information")
-  .post(businessInformationControllers.addBusinessInformation);
+router.post("/business-information",businessInformationControllers.addBusinessInformation);
 
 module.exports = router;
